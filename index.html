@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MortgageMasterAI - AI-Powered Platform for Mortgage Brokers</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-brand">
+                <h1 class="brand-title">MortgageMasterAI</h1>
+                <span class="brand-tagline">AI-Powered Platform</span>
+            </div>
+            <nav class="header-nav">
+                <button class="nav-item active" data-section="dashboard">Dashboard</button>
+                <button class="nav-item" data-section="leads">Leads</button>
+                <button class="nav-item" data-section="ai-tools">AI Tools</button>
+                <button class="nav-item" data-section="client-portal">Client Portal</button>
+                <button class="nav-item" data-section="analytics">Analytics</button>
+                <button class="nav-item" data-section="settings">Settings</button>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn--primary btn--sm">Add Lead</button>
+                <div class="user-menu">
+                    <span class="user-name">John Broker</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="section-header">
+                <h2>Dashboard</h2>
+                <p class="section-subtitle">Your mortgage business overview</p>
+            </div>
+            
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Active Leads</h3>
+                    <div class="metric-value">47</div>
+                    <div class="metric-change positive">+12% this month</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Conversion Rate</h3>
+                    <div class="metric-value">24.5%</div>
+                    <div class="metric-change positive">+3.2% this month</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Monthly Volume</h3>
+                    <div class="metric-value">$2.15M</div>
+                    <div class="metric-change positive">+8.4% this month</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Revenue</h3>
+                    <div class="metric-value">$21,500</div>
+                    <div class="metric-change positive">+15.6% this month</div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="dashboard-section">
+                <h3>Quick Actions</h3>
+                <div class="quick-actions">
+                    <button class="action-btn">
+                        <span>Add New Lead</span>
+                    </button>
+                    <button class="action-btn">
+                        <span>Schedule Follow-up</span>
+                    </button>
+                    <button class="action-btn">
+                        <span>Generate Report</span>
+                    </button>
+                    <button class="action-btn">
+                        <span>AI Assistant</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="dashboard-section">
+                <h3>Recent Activity</h3>
+                <div class="activity-feed">
+                    <div class="activity-item">
+                        <div class="activity-icon success"></div>
+                        <div class="activity-content">
+                            <div class="activity-title">Lead qualified: John Smith</div>
+                            <div class="activity-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon info"></div>
+                        <div class="activity-content">
+                            <div class="activity-title">Document uploaded by Sarah Johnson</div>
+                            <div class="activity-time">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon warning"></div>
+                        <div class="activity-content">
+                            <div class="activity-title">Follow-up reminder: Mike Davis</div>
+                            <div class="activity-time">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leads Section -->
+        <section id="leads" class="section">
+            <div class="section-header">
+                <h2>Leads Pipeline</h2>
+                <p class="section-subtitle">Manage your lead pipeline with AI insights</p>
+            </div>
+
+            <div class="kanban-board">
+                <div class="kanban-column" data-status="New">
+                    <h3 class="column-header">New <span class="lead-count">1</span></h3>
+                    <div class="leads-container" data-status="New">
+                        <div class="lead-card" data-id="1">
+                            <div class="lead-header">
+                                <h4>John Smith</h4>
+                                <span class="ai-score hot">Hot</span>
+                            </div>
+                            <div class="lead-details">
+                                <div class="lead-amount">$450,000</div>
+                                <div class="lead-type">Primary Residence</div>
+                                <div class="lead-credit">Credit: 740</div>
+                            </div>
+                            <div class="lead-actions">
+                                <button class="btn-icon" title="Call">📞</button>
+                                <button class="btn-icon" title="Email">✉️</button>
+                                <button class="btn-icon" title="Notes">📝</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban-column" data-status="Contacted">
+                    <h3 class="column-header">Contacted <span class="lead-count">0</span></h3>
+                    <div class="leads-container" data-status="Contacted"></div>
+                </div>
+
+                <div class="kanban-column" data-status="Qualified">
+                    <h3 class="column-header">Qualified <span class="lead-count">1</span></h3>
+                    <div class="leads-container" data-status="Qualified">
+                        <div class="lead-card" data-id="2">
+                            <div class="lead-header">
+                                <h4>Sarah Johnson</h4>
+                                <span class="ai-score warm">Warm</span>
+                            </div>
+                            <div class="lead-details">
+                                <div class="lead-amount">$325,000</div>
+                                <div class="lead-type">Investment</div>
+                                <div class="lead-credit">Credit: 680</div>
+                            </div>
+                            <div class="lead-actions">
+                                <button class="btn-icon" title="Call">📞</button>
+                                <button class="btn-icon" title="Email">✉️</button>
+                                <button class="btn-icon" title="Notes">📝</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban-column" data-status="In Process">
+                    <h3 class="column-header">In Process <span class="lead-count">1</span></h3>
+                    <div class="leads-container" data-status="In Process">
+                        <div class="lead-card" data-id="3">
+                            <div class="lead-header">
+                                <h4>Mike Davis</h4>
+                                <span class="ai-score hot">Hot</span>
+                            </div>
+                            <div class="lead-details">
+                                <div class="lead-amount">$275,000</div>
+                                <div class="lead-type">Primary Residence</div>
+                                <div class="lead-credit">Credit: 720</div>
+                            </div>
+                            <div class="lead-actions">
+                                <button class="btn-icon" title="Call">📞</button>
+                                <button class="btn-icon" title="Email">✉️</button>
+                                <button class="btn-icon" title="Notes">📝</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban-column" data-status="Closed">
+                    <h3 class="column-header">Closed <span class="lead-count">0</span></h3>
+                    <div class="leads-container" data-status="Closed"></div>
+                </div>
+
+                <div class="kanban-column" data-status="Dead">
+                    <h3 class="column-header">Dead <span class="lead-count">0</span></h3>
+                    <div class="leads-container" data-status="Dead"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tools Section -->
+        <section id="ai-tools" class="section">
+            <div class="section-header">
+                <h2>AI Tools Hub</h2>
+                <p class="section-subtitle">Manage your integrated AI tools and automation</p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card active">
+                    <div class="tool-header">
+                        <h3>Atlas Voice Assistant</h3>
+                        <div class="tool-status">
+                            <span class="status-indicator active"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">24/7 lead qualification</p>
+                    <div class="tool-metrics">127 calls this month</div>
+                    <div class="tool-actions">
+                        <button class="btn btn--sm btn--secondary">Configure</button>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tool-card active">
+                    <div class="tool-header">
+                        <h3>Automation Workflows</h3>
+                        <div class="tool-status">
+                            <span class="status-indicator active"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Client onboarding & follow-up</p>
+                    <div class="tool-metrics">15 active workflows</div>
+                    <div class="tool-actions">
+                        <button class="btn btn--sm btn--secondary">Configure</button>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tool-card connected">
+                    <div class="tool-header">
+                        <h3>Social Media Manager</h3>
+                        <div class="tool-status">
+                            <span class="status-indicator connected"></span>
+                            <span>Connected</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Instagram & LinkedIn automation</p>
+                    <div class="tool-metrics">34 new social leads</div>
+                    <div class="tool-actions">
+                        <button class="btn btn--sm btn--secondary">Configure</button>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tool-card active">
+                    <div class="tool-header">
+                        <h3>Analytics Engine</h3>
+                        <div class="tool-status">
+                            <span class="status-indicator active"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">Performance tracking & insights</p>
+                    <div class="tool-metrics">Daily reports generated</div>
+                    <div class="tool-actions">
+                        <button class="btn btn--sm btn--secondary">Configure</button>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Portal Section -->
+        <section id="client-portal" class="section">
+            <div class="section-header">
+                <h2>Client Portal</h2>
+                <p class="section-subtitle">Track client progress and communications</p>
+            </div>
+
+            <div class="portal-content">
+                <div class="portal-sidebar">
+                    <div class="client-list">
+                        <div class="client-item active">
+                            <h4>Mike Davis</h4>
+                            <div class="client-status in-process">In Process</div>
+                        </div>
+                        <div class="client-item">
+                            <h4>Sarah Johnson</h4>
+                            <div class="client-status qualified">Qualified</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portal-main">
+                    <div class="client-overview">
+                        <h3>Mike Davis - $275,000 Loan</h3>
+                        <div class="progress-tracker">
+                            <div class="progress-step completed">
+                                <div class="step-indicator">✓</div>
+                                <span>Application Submitted</span>
+                            </div>
+                            <div class="progress-step completed">
+                                <div class="step-indicator">✓</div>
+                                <span>Documents Collected</span>
+                            </div>
+                            <div class="progress-step active">
+                                <div class="step-indicator">3</div>
+                                <span>Underwriting Review</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-indicator">4</div>
+                                <span>Final Approval</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-indicator">5</div>
+                                <span>Closing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portal-tabs">
+                        <button class="tab-btn active" data-tab="documents">Documents</button>
+                        <button class="tab-btn" data-tab="communications">Communications</button>
+                        <button class="tab-btn" data-tab="rates">Rate Quotes</button>
+                    </div>
+
+                    <div class="tab-content active" id="documents">
+                        <div class="document-checklist">
+                            <div class="document-item completed">
+                                <span class="document-status">✓</span>
+                                <span>W-2 Forms (2 years)</span>
+                                <span class="upload-date">Uploaded 3 days ago</span>
+                            </div>
+                            <div class="document-item completed">
+                                <span class="document-status">✓</span>
+                                <span>Pay Stubs (2 months)</span>
+                                <span class="upload-date">Uploaded 3 days ago</span>
+                            </div>
+                            <div class="document-item pending">
+                                <span class="document-status">⏳</span>
+                                <span>Bank Statements (3 months)</span>
+                                <span class="upload-date">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="communications">
+                        <div class="communication-history">
+                            <div class="comm-item">
+                                <div class="comm-type">Email</div>
+                                <div class="comm-content">Sent loan approval confirmation</div>
+                                <div class="comm-date">2 hours ago</div>
+                            </div>
+                            <div class="comm-item">
+                                <div class="comm-type">Call</div>
+                                <div class="comm-content">Discussed loan terms and timeline</div>
+                                <div class="comm-date">1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="rates">
+                        <div class="rate-options">
+                            <div class="rate-card selected">
+                                <h4>30-Year Fixed</h4>
+                                <div class="rate">6.75%</div>
+                                <div class="monthly-payment">$1,785/month</div>
+                            </div>
+                            <div class="rate-card">
+                                <h4>15-Year Fixed</h4>
+                                <div class="rate">6.25%</div>
+                                <div class="monthly-payment">$2,368/month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="section">
+            <div class="section-header">
+                <h2>Analytics & Reporting</h2>
+                <p class="section-subtitle">Track your performance and ROI</p>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="chart-container" style="position: relative; height: 300px;">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-container" style="position: relative; height: 300px;">
+                    <canvas id="conversionChart"></canvas>
+                </div>
+                <div class="chart-container" style="position: relative; height: 300px;">
+                    <canvas id="leadSourceChart"></canvas>
+                </div>
+                <div class="analytics-summary">
+                    <h3>Performance Summary</h3>
+                    <div class="summary-item">
+                        <span>Best Lead Source:</span>
+                        <span class="summary-value">Referrals (42% conversion)</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Average Deal Size:</span>
+                        <span class="summary-value">$340,000</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Time to Close:</span>
+                        <span class="summary-value">28 days average</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="section">
+            <div class="section-header">
+                <h2>Settings</h2>
+                <p class="section-subtitle">Manage your account and integrations</p>
+            </div>
+
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3>Profile Information</h3>
+                    <div class="form-group">
+                        <label class="form-label">Business Name</label>
+                        <input type="text" class="form-control" value="Broker Pro Lending">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">NMLS ID</label>
+                        <input type="text" class="form-control" value="12345">
+                    </div>
+                    <button class="btn btn--primary">Save Changes</button>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Plan & Billing</h3>
+                    <div class="plan-info">
+                        <div class="plan-name">Professional Plan</div>
+                        <div class="plan-price">$299/month</div>
+                        <div class="plan-features">
+                            <div>✓ All AI Tools</div>
+                            <div>✓ Unlimited Leads</div>
+                            <div>✓ Priority Support</div>
+                        </div>
+                    </div>
+                    <button class="btn btn--outline">Upgrade Plan</button>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Integrations</h3>
+                    <div class="integration-list">
+                        <div class="integration-item">
+                            <span>CRM Integration</span>
+                            <span class="status--success">Connected</span>
+                        </div>
+                        <div class="integration-item">
+                            <span>Email Marketing</span>
+                            <span class="status--success">Connected</span>
+                        </div>
+                        <div class="integration-item">
+                            <span>Calendar Sync</span>
+                            <span class="status--warning">Disconnected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Notifications</h3>
+                    <div class="notification-settings">
+                        <label class="setting-toggle">
+                            <span>New Lead Alerts</span>
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <label class="setting-toggle">
+                            <span>Follow-up Reminders</span>
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <label class="setting-toggle">
+                            <span>Weekly Reports</span>
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lead Detail Modal -->
+    <div class="modal hidden" id="leadModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalLeadName">Lead Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="contact">Contact</button>
+                    <button class="tab-btn" data-tab="loan">Loan Details</button>
+                    <button class="tab-btn" data-tab="notes">Notes</button>
+                </div>
+                <div class="tab-content active" id="contact">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="modalEmail">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="modalPhone">
+                    </div>
+                </div>
+                <div class="tab-content" id="loan">
+                    <div class="form-group">
+                        <label class="form-label">Loan Amount</label>
+                        <input type="text" class="form-control" id="modalLoanAmount">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Property Type</label>
+                        <input type="text" class="form-control" id="modalPropertyType">
+                    </div>
+                </div>
+                <div class="tab-content" id="notes">
+                    <div class="form-group">
+                        <label class="form-label">Notes</label>
+                        <textarea class="form-control" rows="5" placeholder="Add notes about this lead..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--outline">Cancel</button>
+                <button class="btn btn--primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
